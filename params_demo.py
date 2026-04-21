@@ -1,4 +1,5 @@
-# Expected net taxable income for the year, excluding the prime d'intéressement (Revenu net imposable)
+# Expected net taxable income for the year, excluding the prime d'intéressement (Revenu net
+# imposable)
 REVENUS = 2730 * 12 # Average from https://www.insee.fr/fr/statistiques/7457170
 
 # prime d'intéressement
