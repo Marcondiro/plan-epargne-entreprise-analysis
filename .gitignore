@@ -175,7 +175,6 @@ cython_debug/
 
 .DS_Store
 
-params.py
-_params.py
+params.toml
 
 
