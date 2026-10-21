@@ -2,11 +2,11 @@
 
 # Each bracket starts where the previous one ends, so that no part of the income is left out
 BAREME_IMPOT_REVENU: list[tuple[int, int, float]] = [
-    (0, 11497, 0.00),
-    (11497, 29315, 0.11),
-    (29315, 83823, 0.30),
-    (83823, 180294, 0.41),
-    (180294, pow(2, 64) - 1, 0.45)
+    (0, 11600, 0.00),
+    (11600, 29579, 0.11),
+    (29579, 84577, 0.30),
+    (84577, 181917, 0.41),
+    (181917, pow(2, 64) - 1, 0.45)
 ]
 
 CRDS = 0.5 / 100
