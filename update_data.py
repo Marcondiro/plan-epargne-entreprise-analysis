@@ -10,6 +10,7 @@ Usage: ./.venv/bin/python update_data.py
 import io
 import re
 import time
+import tomllib
 import urllib.request
 from datetime import date
 from pathlib import Path
@@ -21,18 +22,8 @@ DATA_DIR = Path(__file__).parent / "data"
 XLSX_CONTENT_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 
 # data file name (without extension) -> ISIN
-FUNDS = {
-    "CM-AM AVENIR MONETAIRE": "000010001440",
-    "CM-AM PERSPECTIVE CERTITUDE": "000010001816",
-    "SOCIAL ACTIVE TEMPERE SOLIDAIRE": "000010001620",
-    "CM-AM AVENIR ACTIONS FRANCE": "000010001411",
-    "CM-AM AVENIR ACTIONS INTERNATIONAL": "000010001412",
-    "CM-AM AVENIR DYNAMIQUE": "000010001438",
-    "CM-AM AVENIR OBLIG": "000010003801",
-    "CM-AM AVENIR TEMPERE": "000010003803",
-    "CM-AM AVENIR EQUILIBRE": "000010003804",
-    "CM-AM AVENIR ACTIONS EUROPE": "000010003800",
-}
+with (Path(__file__).parent / "consts.toml").open("rb") as f:
+    FUNDS = {fund["file"]: fund["isin"] for fund in tomllib.load(f)["PEE_FUNDS"]}
 
 
 def fetch(url: str) -> tuple[bytes, str]:

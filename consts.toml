@@ -1,0 +1,97 @@
+# Constants related to taxes, fiscal rules (for 2026) and funds
+
+# Income tax brackets as [lower, upper, rate]
+# Each bracket starts where the previous one ends, so that no part of the income is left out
+BAREME_IMPOT_REVENU = [
+    [0, 11600, 0.00],
+    [11600, 29579, 0.11],
+    [29579, 84577, 0.30],
+    [84577, 181917, 0.41],
+    [181917, inf, 0.45],
+]
+
+CRDS = 0.005            # 0.5%
+CSG = 0.092             # 9.2%
+CSG_DEDUCTIBLE = 0.068  # 6.8%
+
+PRIME_TAX_EXEMPTION_LIMIT = 36045
+
+PRELEVEMENT_SOCIAUX = 0.186  # 18.6%
+
+# PEE funds managed by Crédit Mutuel AM
+# - label: name shown in the results
+# - file: data file name in data/ (without extension)
+# - isin: code of the fund on the Crédit Mutuel AM website
+# - entrance_fee: from the KID (Document d’informations clés)
+# - skipfooter: rows to skip at the end of the data file (the page footer and, for some files, the
+#   yearly values at the end of the history)
+
+[[PEE_FUNDS]]
+label = "PEE Monetaire"
+file = "CM-AM AVENIR MONETAIRE"
+isin = "000010001440"
+entrance_fee = 0.01
+skipfooter = 5
+
+[[PEE_FUNDS]]
+label = "PEE Certitude"
+file = "CM-AM PERSPECTIVE CERTITUDE"
+isin = "000010001816"
+entrance_fee = 0.005
+skipfooter = 2
+
+[[PEE_FUNDS]]
+label = "PEE SA TEMP SOL"
+file = "SOCIAL ACTIVE TEMPERE SOLIDAIRE"
+isin = "000010001620"
+entrance_fee = 0.005
+skipfooter = 1
+
+[[PEE_FUNDS]]
+label = "PEE France"
+file = "CM-AM AVENIR ACTIONS FRANCE"
+isin = "000010001411"
+entrance_fee = 0.01
+skipfooter = 2
+
+[[PEE_FUNDS]]
+label = "PEE INTL"
+file = "CM-AM AVENIR ACTIONS INTERNATIONAL"
+isin = "000010001412"
+entrance_fee = 0.01
+skipfooter = 2
+
+[[PEE_FUNDS]]
+label = "PEE Dynamique"
+file = "CM-AM AVENIR DYNAMIQUE"
+isin = "000010001438"
+entrance_fee = 0.01
+skipfooter = 5
+
+[[PEE_FUNDS]]
+label = "PEE OBLIG"
+file = "CM-AM AVENIR OBLIG"
+isin = "000010003801"
+entrance_fee = 0.01
+skipfooter = 5
+
+[[PEE_FUNDS]]
+label = "PEE TEMPERE"
+file = "CM-AM AVENIR TEMPERE"
+isin = "000010003803"
+entrance_fee = 0.01
+skipfooter = 5
+
+[[PEE_FUNDS]]
+label = "PEE EQUILIBRE"
+file = "CM-AM AVENIR EQUILIBRE"
+isin = "000010003804"
+entrance_fee = 0.01
+skipfooter = 5
+
+[[PEE_FUNDS]]
+label = "PEE Europe"
+file = "CM-AM AVENIR ACTIONS EUROPE"
+isin = "000010003800"
+entrance_fee = 0.01
+skipfooter = 5
