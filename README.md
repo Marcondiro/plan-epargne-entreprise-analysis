@@ -11,10 +11,12 @@ python3.14 -m venv .venv
 
 ## Update the data
 
-The PEE fund prices in `data/` can be refreshed from the Crédit Mutuel AM website:
+The PEE fund prices (from the Crédit Mutuel AM website) and the Livret A rates (Banque de France
+series, through [DBnomics](https://db.nomics.world/BDF/MIR1/M.FR.B.L23FRLA.D.R.A.2230U6.EUR.O)) in
+`data/` can be refreshed with:
 
 ```sh
 ./.venv/bin/python update_data.py
 ```
 
-The Livret A rates and the ETF prices are still updated manually.
+The ETF prices are still updated manually.
